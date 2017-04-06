@@ -1,0 +1,406 @@
+package com.javarush.task.task05.task0532;
+import java.io.*;
+import java.util.Arrays;
+/* 
+Задача по алгоритмам
+*/
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int maximum;
+        int n = Integer.parseInt(reader.readLine());
+        int[] mass = new int[n]; //создали массив
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {                      //цикл "for" для наполнения массива "mass"
+                //с количеством элементов "i" которое должно быть равно введннному числу "n"
+                mass[i] = Integer.parseInt(reader.readLine()); //вводим элементы массива с консоли
+            }
+            Arrays.sort(mass);//метод упорядочивает весь массив в порядке возрастания
+            int index = mass.length - 1; //вычисляем длину массива
+            maximum = mass[index]; // последний элемент массива - наибольшее число
+            System.out.println(maximum);
+        }
+    }
+}
+
+ЧЕТНЫЕ И НЕ ЧЕТНЫЕ ЦИФРЫ В ЧИСЛЕ
+pppublic class Solution {
+    public static int even;
+    public static int odd;
+    public static void main(String[] args) throws IOException {
+                BufferedReader y = new BufferedReader(new InputStreamReader(System.in));
+                int a = Integer.parseInt(y.readLine());
+                while (a>0) {
+                    if ((a%10 == 0) && (a > 9)) //отсекаем последний 0 в числе и проверяем его двухзначность
+                        a = a/10;
+                    if (a%2 == 0)
+                        even = even + 1;
+                    else odd = odd + 1;
+                    a = a/10;
+                }
+                System.out.println("Even: " + even + " " + "Odd: "+ odd);
+            }
+        }//напишите тут ваш код
+        
+        СЧЕТЧИКи КОТОВ
+        public class Cat {
+    private static int catCount = 0;
+    public Cat() {
+        catCount++;
+    }
+    public static int getCatCount() {
+        return Cat.catCount;//напишите тут ваш код
+    }
+    public static void setCatCount(int catCount) {
+        Cat.catCount = catCount;//напишите тут ваш код
+    }
+    public static void main(String[] args) {
+    }
+}
+
+
+package com.javarush.task.task06.task0614;
+        import java.util.ArrayList;
+/*
+Статические коты
+*/
+public class Cat {
+    //создание массива
+    public static ArrayList cats = new ArrayList();
+    public Cat() {
+    }
+    public static void main(String[] args) {
+        /*
+         создаём объекты (котиков) и добавляем в массив,
+         при этом сразу после занесения в массив вызываем
+         метод printCats(), чтобы вывести на экран последнего
+         добавленного котика
+       */
+        for(int i = 0; i < 10; i++){
+            Cat cat = new Cat();
+            cats.add(cat);
+            printCats();
+        }
+    }
+    public static void printCats() {
+       /*
+        т.к. этот метод вызываем прямо в теле цикла, на экран выводится последний
+        созданный (занесённый в массив) котик
+       */
+        System.out.println(cats);
+    }
+    
+    
+    ПРОВЕРКА МАССИВА НА ПОЛОЖИТЕЛЬНЫЕ И ОТРИЦАТЕЛЬНЫЕ ЧИСЛА:
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int a=0, b=0;
+        int[] mas = new int[3];
+        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 3; i++) {
+            mas[i]= Integer.parseInt(r.readLine());
+            if (mas[i] > 0)
+                a++;
+            else if (mas[i] < 0)
+                b++;
+        }
+        System.out.println("количество отрицательных чисел: "+b);
+        System.out.println("количество положительных чисел: "+a);
+    }
+        }
+        
+        
+        СУММА ВВЕДЕННЫХ ЧИСЕЛ КРОМЕ -1:
+        
+        import java.io.*;
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader B = new BufferedReader(new InputStreamReader(System.in));
+        int a = 0;
+        int sum = 0;
+        while (a != -1) {
+            a = Integer.parseInt(B.readLine());
+            sum += a;//напишите тут ваш код
+        }
+        System.out.println(sum);
+    }
+}
+//Когда запускаем скрипт сразу проверяется условие цикла. 
+// И так как "а" у нас пока ещё равна нулю, т.е. не -1, 
+// то программа заходит в цикл, начинает запрашивать ввод числа с Клавы. 
+// Введёное число с Клавы записывается в "а" и к "sum" прибавляется новое значение "а".
+// Опять проверяется условие цикла. И всё начинается сначала. Если мы введём с Клавы -1, 
+// то это значение запишется сразу в "а", потом как всегда прибавится к "sum" (что и требуется в условии),
+// потом "а" проверится в условии цикла, и т.к. "а" не удовлетворяет условие,
+// то мы выходим из цикла и выводим на экран сумму. Это я больше для себя писал, 
+// чтобы понять всю логику программы)) Но, может, кому и пригодится))
+
+   
+   
+   КОПИЛКА
+package com.javarush.task.task05.task0529;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+/* 
+Консоль-копилка
+*/
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(newInputStreamReader(System.in));
+        int sum = 0;
+        while (true){
+            String s = reader.readLine();
+            if (s.equals("сумма")) {
+                break;
+            }
+            int n = Integer.parseInt(s);
+            sum += n;
+        }
+        System.out.println(sum);
+    }
+}
+
+
+
+
+Конструкция ввода с клавы:
+
+
+package com.javarush.task.task03.task0318;
+/* 
+План по захвату мира
+*/
+import java.io.*;
+public class Solution {
+    public static void main(String[] args) throws Exception {
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String name = bufferedReader.readLine();
+        String sA = bufferedReader.readLine();
+        int nA = Integer.parseInt(sA);
+
+        System.out.println(name + " захватит мир через " + nA + " лет. Му-ха-ха!");//напишите тут ваш код
+    }
+}
+задача про цену яблок:    РАЗОБРАТЬСЯ!!!!!
+
+package com.javarush.task.task04.task0402;
+/* 
+Цена яблока
+*/
+public class Solution {
+    public static void main(String[] args) {
+        Apple apple = new Apple();//создаю экземпляр класса Apple
+        apple.addPrice(50);//через метод addPrice присваиваю экземпляру цену
+        Apple apple2 = new Apple();//создаю экземпляр класса Apple
+        apple2.addPrice(100);//через метод addPrice присваиваю экземпляру цену
+        System.out.println("Apples price is " + Apple.applesPrice);//вывожу на консоль строку "Apples price is " + общая цена яблок, полученная с помощью присвоения классу Apple общей цены яблок методом applesPrice
+    }
+    public static class Apple//публичный статичный класс Apple
+ {
+        public static int applesPrice = 0;//целочисленная переменная applesPrice класса Apple
+        public static void addPrice(int applesPrice)//метод addPrice принадлежащий классу Apple и исполняемый внутри класса Apple
+ {
+            Apple.applesPrice = Apple.applesPrice + applesPrice;
+            
+            //напишите тут ваш код
+        }
+    }
+}
+
+счетчик котов:
+package com.javarush.task.task04.task0404;
+/* 
+Реализовать метод addNewCat
+*/
+public class Cat {
+    private static int catsCount = 0;
+    public static void addNewCat() {
+        Cat.catsCount = Cat.catsCount + 1; //напишите тут ваш код
+    }
+;    public static void main(String[] args) {
+        Cat cat1 = new Cat();
+        cat1.addNewCat();
+        Cat cat2 = new Cat();
+        cat2.addNewCat();
+        Cat cat3 = new Cat();
+        cat3.addNewCat();
+        Cat cat4 = new Cat();
+        cat4.addNewCat();
+        System.out.println(Cat.catsCount);
+    }
+}
+
+
+https://plus.google.com/communities/103236590940492470191
+
+
+BufferedReader bufferedReader = new BufferedReader(new 
+InputStreamReader(System.in));
+String sA = bufferedReader.readLine();
+int a = Integer.parseInt(sA);
+if(a < 0) {
+    System.out.println(a + 1);//напишите тут ваш код
+} else if (a > 0) {
+    System.out.println(a * 2);
+} else {
+    System.out.println(0);
+
+}
+
+if (a >=50 && a <= 100) {
+    System.out.println("Число " + a + " содержится в интервале.");//::CODE:
+} else {
+    System.out.println("Число " + a + " не содержится в интервале.");
+}
+
+if (month < 9 && month > 5) {
+    System.out.println("лето");//::CODE:
+} else if (month < 6 && month > 2) {
+    System.out.println("весна");
+} else if (month < 12 && month > 8) {
+    System.out.println("осень");
+} else {
+    System.out.println("зима");
+}
+
+BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+String sA = bufferedReader.readLine();
+int nA = Integer.parseInt(sA);
+if(nA < 0) {
+    System.out.println(nA + 1);//напишите тут ваш код
+} else if (nA > 0) {
+    System.out.println(nA * 2);
+} else {
+    System.out.println(0);
+}
+
+
+ BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    String sA = bufferedReader.readLine();
+    int nA = Integer.parseInt(sA);
+    int a = nA;
+    if (a == 1) {
+        System.out.println("понедельник");//напишите тут ваш код
+    }else if (a == 2) {
+        System.out.println("вторник");
+    }else if (a == 3) {
+        System.out.println("среда");
+    }else if (a == 4) {
+        System.out.println("четверг");
+    }else if (a == 5) {
+        System.out.println("пятница");
+    }else if (a == 6) {
+        System.out.println("суббота");
+    }else if (a == 7) {
+        System.out.println("воскресенье");
+    }else System.out.println("такого дня недели не существует");
+}
+
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int i=0;
+        int x=365;
+        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        i=Integer.parseInt(reader.readLine());
+        System.out.println(i%4==0^i%100!=0^(i%400==0)?"количество дней в году: "+x:"количество дней в году: "+(x+1));
+    }
+            }
+
+
+
+BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+   String sA = bufferedReader.readLine();
+   int nA = Integer.parseInt(sA);
+    String sB = bufferedReader.readLine();
+    int nB = Integer.parseInt(sB);
+    String sC = bufferedReader.readLine();
+    int nC = Integer.parseInt(sC);
+    int a = nA, b = nB, c = nC;
+    if ((a + b) > c && (a + c) > b && (b + c) > a) {
+        System.out.println("Треугольник существует");// напишите тут ваш код
+    }else System.out.println("Треугольник не существует");
+}
+
+
+
+
+СВЕТОФОР:
+BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+String sA = bufferedReader.readLine();
+float dA = Float.parseFloat(sA);
+float t = dA;
+if (t > 0 && t <=3) {
+    System.out.println("зелёный");//напишите тут ваш код
+}else if (t > 3 && t <=4) {
+    System.out.println("желтый");
+}else if (t > 4 && t <=5) {
+    System.out.println("красный");
+}
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+        String reader = buf.readLine();
+        double x1 = Double.parseDouble(reader);
+        while (x1>0) {
+            if (x1 >= 4 && x1<5 ) {
+                System.out.println("красный");
+            }
+            if (x1 >=3 & x1<4) {
+                System.out.println("желтый");
+            }
+            if (x1 < 3 || x1 == 5) {
+                System.out.println("зелёный");
+            }
+            x1= x1-5;
+        }  //напишите тут ваш код
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+public class Solution {
+    public static void main(String[] args) {
+
+3.Создаются объекты(экземпляры) класса и в аргументах прописываются конкретные значения.
+        Cat cat1 = new Cat("Vaska", 2, 3,3);
+        Cat cat2 = new Cat("Pushok", 3,4,3);
+        Cat cat3 = new Cat("Murzik", 4, 3, 4);//напишите тут ваш код
+    }
+
+
+
+1.Создается класс, и внутри него прописывается какие параметры у этого класса будут (аргументы класса)
+    public static class Cat {
+        private String name;
+        private int age;
+        private int weight;
+        private int strength;
+
+
+
+
+2.Внутри класса создается конструктор, конкретно показывающий как будет выглядеть экземпляр созданного класса
+        
+	public Cat(String name, int age, int weight, int strength) {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+            this.strength = strength;
+        }
+    }
+}
+
+        
