@@ -1,4 +1,4 @@
-package com.javarush.task.task07.task0701;
+package com.javarush.task.task07.task0701; //МАКСИМАЛЬНОЕ ЗНАЧЕНИЕ ИЗ МАССИВА [20]
 
 import java.io.BufferedReader;
 import java.io.IOException;
