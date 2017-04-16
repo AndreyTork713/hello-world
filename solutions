@@ -62,3 +62,15 @@ public class Solution {
         } //напишите тут ваш код
 }
 }
+
+
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] nM = new int[10];
+        String[] sM = new String[10];
+        for(int i = 0; i < 10; i++) {
+            String sA = reader.readLine();
+            sM[i] = sA;
+            nM[i] =sM[i].length();
+
+            System.out.println(nM[i]);
+        }
