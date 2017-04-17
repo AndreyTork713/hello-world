@@ -129,3 +129,31 @@ public class Solution {
 
 }
 
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+/* 
+Улицы и дома
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int[] a = new int[15];
+        Scanner reader = new Scanner(System.in);
+        int chet = 0;
+        int nechet = 0;
+        for(int i = 0; i<15;i++) {
+            a[i] = reader.nextInt();//напишите тут ваш код
+            if(i%2 == 0) chet += a[i];
+            else if ( i == 0) chet += a[i];
+            else  nechet += a[i];
+        }
+        if(chet > nechet) System.out.println("В домах с четными номерами проживает больше жителей.");
+        else System.out.println("В домах с нечетными номерами проживает больше жителей.");
+    }
+}
+
