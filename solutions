@@ -74,3 +74,58 @@ BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
             System.out.println(nM[i]);
         }
+        
+        import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/* 
+Переверни массив
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] nA = new int[10];
+        for(int i = 0; i < nA.length; i++) {
+            String s = reader.readLine();
+            nA[i] = Integer.parseInt(s);
+        }
+        for(int i = 9; i >= 0; i--) {
+            System.out.println(nA[i]);
+        }
+    }
+}
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+/* 
+Один большой массив и два маленьких
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int[] nA = new int[20];
+        int[] m = new int[10];
+        int[] p = new int[10];
+        for (int i = 0; i < nA.length; i++) {
+            String sA = reader.readLine();
+            nA[i] = Integer.parseInt(sA);
+
+                if(i < 10) {
+                    m[i] = nA[i];
+                    }
+                else {
+
+                    p[i-10] = nA[i];//напишите тут ваш код
+               }
+        }
+        for(int i = 0; i < p.length; i++)
+        System.out.println(p[i]);
+
+    }
+
+}
+
