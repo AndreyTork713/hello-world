@@ -1,0 +1,26 @@
+package javaapplication1;
+
+
+public class JavaApplication1 {
+
+    
+    public static void main(String[] args) {
+        double a, b=7,c=2;
+        a=b/c;
+        System.out.println(7<<2);
+        System.out.println(twoCube(b,c));
+        System.out.println(summa(3,5,6,7,6,5));
+    }
+    static int summa(int ... args){
+           int res = 0;
+         for(int i = 0;i < args.length;res+=args[i], i++);//классический цикл "for" работает быстро
+         
+        for(int n:args) {res+=n;}  //цикл "for" для коллекции. Создаю текущую переменную "n" потом : 
+                                   //далее имя коллекции "args". В теле цикла
+                                   //увеличиваю "res" на "n". Работает медленнее, но он универсальный и для коллекций и для массивов
+           return res;
+       }
+    static double twoCube(double m, double n) {
+        return (m+n)*(m+n)*(m+n);
+    }
+}
