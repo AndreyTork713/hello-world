@@ -24,3 +24,4 @@ public class JavaApplication1 {
         return (m+n)*(m+n)*(m+n);
     }
 }
+
